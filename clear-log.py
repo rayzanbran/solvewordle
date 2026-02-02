@@ -1,5 +1,5 @@
 """
-Clears the logfile.
+Clears the logfile. Only run if you want to clear the logfile.
 """
 from consts import *
 

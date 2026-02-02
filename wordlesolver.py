@@ -79,7 +79,7 @@ def get_grays():
     inputstr = input()
 
     for i in inputstr:
-        if i not in grays: # prevent duplicates in grays
+        if i not in grays and i.isalpha(): # prevent duplicates/numbers in grays
             grays.append(i.lower()) # convert letter to lowercase
 
 def get_yellows():
@@ -92,8 +92,10 @@ def get_yellows():
     inputstr = input()
 
     inputarr = inputstr.split() # split into each LN token
-
-    processyg(inputarr, 'y')
+    try:
+        processyg(inputarr, 'y')
+    except:
+        print("Invalid input.")
 
 def get_greens():
     """Gets green letters from user."""
@@ -104,8 +106,10 @@ def get_greens():
     inputstr = input()
 
     inputarr = inputstr.split()
-
-    processyg(inputarr, 'g')
+    try:
+        processyg(inputarr, 'g')
+    except:
+        print("Invalid input.")
 
 def reset():
     """Clears all user input and found solutions,
