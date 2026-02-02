@@ -191,9 +191,12 @@ def print_sols():
        NOTE: solutions must have been generated before this is called.
     """
     # display solutions
-    print("guesses: (remember, not all of these are valid final answers!)")
-    for i in solutions:
-        print(f"{i.to_str()},", end=" ")
+    print("guesses (remember, not all of these are valid final answers!):")
+    if not len(solutions) == 0:
+        for i in solutions:
+            print(f"{i.to_str()},", end=" ")
+    else:
+        print("There were no solutions. Check your input?")
     print("\n")
 
 
