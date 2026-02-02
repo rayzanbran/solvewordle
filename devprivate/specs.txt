@@ -1,0 +1,29 @@
+- solve wordle
+- given any of five known letters, generate all possible alphabetical solutions
+- discard strings that are not words
+
+- wordle letter classifications:
+- letters that are in the word at an unknown location
+- letters that are not in the word
+- letters that are in the word at a known location
+
+data entry:
+(for all of these, blank indicate unknown)
+- first: enter all letters that are not in the word
+- next: letter by letter, all letters that are NOT at a specified position
+- next: letter by letter, all letters that ARE at a specified position
+
+
+ranking??:
+- rank possible solutions by letters eliminated (like wordle bot does)
+- display best guesses
+-- RANKING SYSTEM:
+-- eliminating vowels top priority
+-- after that, rank letters by the amount of times they appear in the wordle dictionary
+-- add up all letters in the guess and rank by score
+--- we need objects for Guesses to store the word and the score
+
+next up: 
+- sort guesses by score
+- add error handling for input
+- differentiate actual solutions from non-solutions that you are allowed to guess!
