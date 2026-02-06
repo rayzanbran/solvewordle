@@ -5,3 +5,5 @@ from consts import *
 
 with open(LOGFILENAME, "w") as logfile:
     logfile.write("")
+
+print("Log cleared.")
