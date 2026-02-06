@@ -1,4 +1,6 @@
-# Score a word using calculated scores for each letter.
+"""
+Scores a word using calculated scores for each letter.
+"""
 
 import csv
 from consts import *

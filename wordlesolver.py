@@ -191,13 +191,31 @@ def print_sols():
        NOTE: solutions must have been generated before this is called.
     """
     # display solutions
+    # header
     print("guesses (remember, not all of these are valid final answers!):")
+    print('-' * 9 * OUT_PER_LINE) # 9 is the width of one printed solution
+
+    # print a set number of solutions on each line
+    printed = 0
+
     if not len(solutions) == 0:
+        print('|', end= " ") 
         for i in solutions:
-            print(f"{i.to_str()},", end=" ")
+            print(f"{i.to_str()}", end=" | ")
+            printed += 1
+            if printed % OUT_PER_LINE == 0:
+                print("\n|", end= " ") # new output line
     else:
         print("There were no solutions. Check your input?")
     print("\n")
+
+def _test_print_sols():
+    """Output testing"""
+    global solutions
+    for i in range(10):
+        solutions.append(Guess('tests'))
+
+    print_sols()
 
 
 # debug stuff
@@ -207,3 +225,6 @@ if(__name__ == "__main__"):
     print(yellows)
 
     print(greens)
+
+    _test_print_sols()
+
