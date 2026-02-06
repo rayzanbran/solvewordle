@@ -4,10 +4,14 @@ Scores a word using calculated scores for each letter.
 
 import csv
 from consts import *
+import logging
+
+# setup logging
+log = logging.getLogger("scorer")
+logging.basicConfig(filename= SCORERLOGFILE, filemode='w', level=logging.DEBUG)
 
 scoresdict = {} # dictionary to store the scores for each letter
 given = []
-
 
 # read scores from csv into memory **when module loaded**
 with open(SCORESFILENAME, "r", newline='') as scoresfile:
@@ -51,6 +55,8 @@ def upd_given(letters):
     for letter in letters:
         given.append(letter)
 
+    log.log(level=10, msg= f"given is {given}")
+
 def score(word):
     """
     Score a word and return the integer score.
@@ -64,5 +70,8 @@ def score(word):
     for letter in word:
         score += _calc_letter_score(letter, scored)
         scored.append(letter)
+        log.log(level= 10, msg= f"scored is {scored}")
+
+    log.log(level= 10, msg= f"score of {word} is {score}")
 
     return score

@@ -71,6 +71,9 @@ def get_inputs():
     get_yellows()
     get_greens()
 
+    #TODO: upd_given with all these letters.
+    scorer.upd_given(grays)
+
 def get_grays():
     """Gets gray letters from user."""
 
@@ -203,8 +206,11 @@ def print_sols():
         for i in solutions:
             print(f"{i.to_str()}", end=" | ")
             printed += 1
-            if printed % OUT_PER_LINE == 0:
+            if printed == SOLS_GIVEN: # stop printing solutions at max
+                break
+            elif printed % OUT_PER_LINE == 0:
                 print("\n|", end= " ") # new output line
+            
     else:
         print("There were no solutions. Check your input?")
     print("\n")
@@ -212,7 +218,7 @@ def print_sols():
 def _test_print_sols():
     """Output testing"""
     global solutions
-    for i in range(10):
+    for i in range(15):
         solutions.append(Guess('tests'))
 
     print_sols()

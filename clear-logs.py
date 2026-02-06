@@ -1,0 +1,13 @@
+"""
+Clears all logfiles. Only run if you want to clear the logfile.
+"""
+from consts import *
+
+
+with open(LOGFILENAME, "w") as logfile:
+    logfile.write("")
+
+with open(SCORERLOGFILE, "w") as logfile:
+    logfile.write("")
+
+print("Logs cleared.")

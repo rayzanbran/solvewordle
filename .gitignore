@@ -182,3 +182,4 @@ cython_debug/
 
 # solvewordle stuff
 devprivate/
+logs/
